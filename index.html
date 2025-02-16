@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Promotion Page</title>
+  <style>
+    /* Define CSS Variables */
+    :root {
+      --teal: #00a89e;
+      --white: #ffffff;
+      --dark-gray: #333;
+    }
+
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: var(--dark-gray);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(to right, #00a89e, #008c82);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 30px;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.4rem;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    /* Main Section */
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .book-cover {
+      width: 600px;
+      height: auto;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .write-up {
+      background-color: var(--white);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      font-family: 'Georgia', serif;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      width: 80%;
+      max-width: 800px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .btn-get-book {
+      padding: 18px 40px;
+      background-color: var(--teal);
+      color: var(--white);
+      font-size: 1.4rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-get-book:hover {
+      background-color: #00977d;
+      transform: scale(1.05);
+    }
+
+    /* Pop-Up */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .popup-content {
+      background-color: var(--white);
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 400px;
+      width: 80%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .popup h2 {
+      color: var(--teal);
+      margin-bottom: 30px;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .popup .btn-review {
+      padding: 12px 30px;
+      background-color: var(--teal);
+      color: var(--white);
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .popup .btn-review:hover {
+      background-color: #00977d;
+    }
+
+    .popup .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 1.8rem;
+      color: var(--teal);
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(to right, #00a89e, #008c82);
+      color: var(--white);
+      text-align: center;
+      padding: 25px 20px;
+    }
+
+    footer a {
+      color: var(--white);
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s ease-in-out;
+    }
+
+    footer a:hover {
+      color: #00977d;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Media Queries */
+    @media screen and (max-width: 1024px) {
+      .book-cover {
+        width: 300px;
+      }
+
+      .main {
+        padding: 40px 20px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header p {
+        font-size: 1.3rem;
+      }
+
+      .book-cover {
+        width: 250px;
+      }
+
+      .write-up {
+        width: 90%;
+      }
+
+      .btn-get-book {
+        font-size: 1.3rem;
+        padding: 16px 35px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      .write-up {
+        width: 95%;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .btn-get-book {
+        font-size: 1.1rem;
+        padding: 14px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Book Title: ZeroPoint Weight Loss</h1>
+    <p>Subtitle: A Simple Guide to Effective Weight Management and Healthy Living</p>
+  </header>
+
+  <div class="main">
+    <img src="image/OntyHKlyRUu5ceWbJ0rYqA.webp" alt="Book Cover" class="book-cover">
+    <div class="write-up">
+      <p>Unlock the Secret to Effortless Weight Loss!
+
+        Discover how to combine ZeroPoint eating with simple, effective workouts to lose weight and feel amazing—without strict dieting or expensive gym memberships. ZeroPoint Weight Loss is your free guide to creating a balanced, healthy lifestyle that lasts. Get started today!</p>
+    </div>
+    <a href="image/book2 (1).pdf" download><button class="btn-get-book" onclick="showPopup()">Get the Book for Free</button></a>
+  </div>
+
+  <!-- Pop-Up Section -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2>Love the Book? Leave a Review!</h2>
+      <p>Your ebook is downloading now! Thank you so much for purchasing and reading <b>“101 Zero-Point Recipes for Weight Loss.”</b> We truly appreciate your support. If you found the book helpful, we’d be so grateful if you could take a moment to leave a review. Your feedback means the world to us and helps others find the book. Thank you again for being a part of our journey!</p>
+      <a href="https://www.amazon.com/review/create-review?&asin=B0DWB9HT38"><button class="btn-review">Leave a Review</button></a>
+    </div>
+  </div>
+
+  <!-- <footer>
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+    <a href="#">Author Website</a>
+  </footer> -->
+
+  <script>
+    // Show and Hide Popup
+    function showPopup() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
